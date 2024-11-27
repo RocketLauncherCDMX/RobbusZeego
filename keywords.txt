@@ -1,0 +1,78 @@
+############################################################
+# Syntax Coloring Map For Rocket Launcher - Robbus Zeego
+############################################################
+# Class
+############################################################
+
+RobbusZeego	KEYWORD1
+Zeego	KEYWORD1
+
+############################################################
+# Methods and Functions
+############################################################
+
+begin							KEYWORD2
+calibrateSensor		KEYWORD2
+calibrateArrows		KEYWORD2
+calibrateMotors		KEYWORD2
+read 							KEYWORD2
+set 							KEYWORD2
+on 								KEYWORD2
+off 							KEYWORD2
+toggle 						KEYWORD2
+blink 						KEYWORD2
+analogRead 				KEYWORD2
+MotorLeft 				KEYWORD2
+MotorRight 				KEYWORD2
+forward 					KEYWORD2
+backward 					KEYWORD2
+turnLeft 					KEYWORD2
+turnRight 				KEYWORD2
+stop 							KEYWORD2
+playTone 					KEYWORD2
+noTone 						KEYWORD2
+r2d2 							KEYWORD2
+color 						KEYWORD2
+fadeInOut 				KEYWORD2
+heartBeat 				KEYWORD2
+readProm 					KEYWORD2
+enable 						KEYWORD2
+disable 					KEYWORD2
+getName 					KEYWORD2
+
+JoystickUp						KEYWORD2
+JoystickDown						KEYWORD2
+JoystickLeft						KEYWORD2
+JoystickRight						KEYWORD2
+JoystickEnter						KEYWORD2
+Move							KEYWORD2
+Buzzer						KEYWORD2
+Neopixel					KEYWORD2
+Move							KEYWORD2
+
+############################################################
+# Constants
+############################################################
+
+BLACK         		LITERAL2
+OFF           		LITERAL2
+RED           		LITERAL2
+GREEN         		LITERAL2
+BLUE          		LITERAL2
+YELLOW        		LITERAL2
+CYAN          		LITERAL2
+MAGENTA       		LITERAL2
+WHITE         		LITERAL2
+FORWARD         	LITERAL1
+BACKWARD  				LITERAL1
+LEFT  						LITERAL1
+RIGHT 						LITERAL1
+ON    						LITERAL1
+OFF   						LITERAL1
+NONE  						LITERAL1
+BUZZER    				LITERAL1
+NEOPIXEL  				LITERAL1
+PRESSED 					LITERAL2
+RELEASED          LITERAL2
+HOLD_RELEASED     LITERAL2
+HOLD_PRESSED			LITERAL2
