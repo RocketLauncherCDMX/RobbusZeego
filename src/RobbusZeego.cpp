@@ -16,11 +16,6 @@ void RobbusZeego :: begin() {
 
   Wire.begin(23,22);
 
-  screen.begin();
-  // Clear the buffer
-  screen.clearDisplay();
-  screen.display();
-
   // BUTTONS
   JoystickUp.pin = JOYSTICK_UP;
   JoystickDown.pin = JOYSTICK_DOWN;
@@ -51,7 +46,7 @@ void RobbusZeego :: begin() {
   ledcAttachPin(BUZZER, PWM_CHANNEL_BUZZER);
   ledcWrite(BUZZER, 128);
 
-  //Move.enableMotors();
+  Move.enableMotors();
 
    // NEOPIXEL INITIALIZATION
   rmt_send = rmtInit(5, true, RMT_MEM_64);
@@ -93,13 +88,13 @@ void RobbusZeego :: lineSensor :: read() {
 }
 
 void RobbusZeego :: lineSensor :: screenPlot() {
-  display.clearDisplay();
+  /*display.clearDisplay();
   display.fillRect(4, 64-sensor1_oledMapped, 23, 64, WHITE);
   display.fillRect(29, 64-sensor2_oledMapped, 23, 64, WHITE);
   display.fillRect(54, 64-sensor3_oledMapped, 23, 64, WHITE);
   display.fillRect(79, 64-sensor4_oledMapped, 23, 64, WHITE);
   display.fillRect(104, 64-sensor5_oledMapped, 23, 64, WHITE);
-  display.display();
+  display.display();*/
 }
 
 void RobbusZeego :: lineSensor :: printValues() {
@@ -124,24 +119,6 @@ void RobbusZeego :: lineSensor :: printValues() {
   if(sensor5 < 1000) Serial.print(" ");
   Serial.println(String(sensor5) + ",");
   
-}
-
-RobbusZeego :: Display :: Display() : screen(128, 64, &Wire, -1) {}  // Inicializamos screen con el constructor adecuado
-
-void RobbusZeego::Display::begin() {
-    if (!screen.begin(SSD1306_I2C_ADDRESS, &Wire)) {
-        Serial.println("Error: Pantalla no detectada");
-        for (;;);
-    }
-    screen.display();
-}
-
-void RobbusZeego :: Display :: print(const char text[]) {
-    screen.print(text); // Usamos el nuevo nombre
-}
-
-void RobbusZeego :: display :: print(const char[] text) {
-  display.print(text);
 }
 
 void RobbusZeego :: movement :: enableMotors() {

@@ -4,9 +4,6 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <pitches.h>
-#include <Adafruit_I2CDevice.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
 
 // -------------------------------------------------------------------------------------------------------------
 // RobbusZeego Classes
@@ -61,11 +58,6 @@ public:
 
   class lineSensor {
   private:
-    uint16_t sensor1;
-    uint16_t sensor2;
-    uint16_t sensor3;
-    uint16_t sensor4;
-    uint16_t sensor5;
     uint8_t sensor1_oledMapped;
     uint8_t sensor2_oledMapped;
     uint8_t sensor3_oledMapped;
@@ -73,6 +65,11 @@ public:
     uint8_t sensor5_oledMapped;
 
   public:
+    uint16_t sensor1;
+    uint16_t sensor2;
+    uint16_t sensor3;
+    uint16_t sensor4;
+    uint16_t sensor5;
     #define IR_SENSOR1              36
     #define IR_SENSOR2              39
     #define IR_SENSOR3              34
@@ -84,15 +81,6 @@ public:
     void printValues();
 
   } LineSensor;
-
-  class Display {
-    public:
-        Display();
-        void print(const char text[]);
-        void begin();
-    private:
-        Adafruit_SSD1306 screen;
-    };
 
   class movement {
   private:
