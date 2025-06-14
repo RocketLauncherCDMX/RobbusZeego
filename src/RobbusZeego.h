@@ -1,17 +1,23 @@
-#ifndef _ROBBUSZEEGO_H
+#ifndef _ROBBUSZEEGO_H_
 #define _ROBBUSZEEGO_H_
 
 #include <Arduino.h>
 #include <Wire.h>
 #include <pitches.h>
+#include <Adafruit_NeoPixel.h>
+
 
 // -------------------------------------------------------------------------------------------------------------
 // RobbusZeego Classes
 class RobbusZeego {
+public:
+  //------------- Neopixel strip (estático, accesible como RobbusZeego::neop) -------------
+  static Adafruit_NeoPixel neop;                 // 1 LED en el pin 5, modo por defecto
+
 private:
   #define SCREEN_ADDRESS        0x3C
   #define PWM_MOTOR_FREQ        30000   // this variable is used to define the time period 
-  #define PWM_RESOUTION         8       // this will define the resolution of the signal which is 8 in this case
+  #define PWM_RESOLUTION         8       // this will define the resolution of the signal which is 8 in this case
 
 public:
   void begin();
@@ -24,7 +30,6 @@ public:
   #define NONE          0
 
   #define BLACK         0
-  #define OFF           0
   #define RED           1
   #define GREEN         2
   #define BLUE          3
@@ -152,4 +157,4 @@ public:
   } Neopixel;
 };
 
-#endif
+#endif  // _ROBBUSZEEGO_H_
